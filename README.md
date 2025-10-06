@@ -13,33 +13,23 @@ The goal was to quantify these relationships and build statistical models that e
 
 🧪 Methods
 
-Tools: Python (Pandas, Statsmodels, Seaborn, Matplotlib)
-Models:
-
-OLS Regression (3 stages)
-
-Multinomial Logistic Regression (sleep disorder classification)
-
-Dataset: 374 adult records with 15 variables (age, stress, sleep duration, heart rate, physical activity, etc.)
-Outputs: Full model summaries, correlation heatmaps, and predicted probability visualizations.
+- Tools: Python (Pandas, Statsmodels, Seaborn, Matplotlib)
+- Models:OLS Regression (3 stages), Multinomial Logistic Regression (sleep disorder classification)
+- Dataset: 374 adult records with 15 variables (age, stress, sleep duration, heart rate, physical activity, etc.)
+- Outputs: Full model summaries, correlation heatmaps, and predicted probability visualizations.
 
 📊 Key Findings
 
-Stress alone explained ≈81% of the variance in sleep quality — the strongest single predictor.
-
-Physical activity improves sleep but does not fully offset stress effects.
-
-Adding physiological factors (age, heart rate, duration) increased R² to 0.87, indicating strong overall model fit.
+- Stress alone explained ≈81% of the variance in sleep quality — the strongest single predictor.
+- Physical activity improves sleep but does not fully offset stress effects.
+- Adding physiological factors (age, heart rate, duration) increased R² to 0.87, indicating strong overall model fit.
 
 Sleep disorder prediction:
-
-High stress and low quality → greater odds of Insomnia.
-
-Elevated heart rate and older age → greater odds of Sleep Apnea.
-
-The extended multinomial model achieved a Pseudo R² ≈ 0.51, showing strong predictive capability.
+- High stress and low quality → greater odds of Insomnia.
+- Elevated heart rate and older age → greater odds of Sleep Apnea.
+- The extended multinomial model achieved a Pseudo R² ≈ 0.51, showing strong predictive capability.
 
 🧩 Interpretation
 
-Stress emerges as the central determinant of poor sleep, but its impact is moderated by behavioral (activity) and physiological (age, heart rate) buffers.
-Together, these results illustrate how psychological pressure translates into biological strain and measurable sleep pathology.
+- Stress emerges as the central determinant of poor sleep, but its impact is moderated by behavioral (activity) and physiological (age, heart rate) buffers.
+- Together, these results illustrate how psychological pressure translates into biological strain and measurable sleep pathology.
