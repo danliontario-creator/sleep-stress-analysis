@@ -1,0 +1,179 @@
+📊 FULL SLEEP ANALYSIS REPORT
+Generated on: 2025-10-06_13-41-28
+
+========================================================================================================================
+🧩 Model 1 – Stress → Quality of Sleep
+========================================================================================================================
+
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:       quality_of_sleep   R-squared:                       0.808
+Model:                            OLS   Adj. R-squared:                  0.807
+Method:                 Least Squares   F-statistic:                     1563.
+Date:                Mon, 06 Oct 2025   Prob (F-statistic):          2.88e-135
+Time:                        13:41:29   Log-Likelihood:                -289.06
+No. Observations:                 374   AIC:                             582.1
+Df Residuals:                     372   BIC:                             590.0
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+================================================================================
+                   coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------
+Intercept       10.5774      0.087    121.678      0.000      10.406      10.748
+stress_level    -0.6062      0.015    -39.535      0.000      -0.636      -0.576
+==============================================================================
+Omnibus:                       84.825   Durbin-Watson:                   0.854
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):              143.897
+Skew:                          -1.329   Prob(JB):                     5.66e-32
+Kurtosis:                       4.474   Cond. No.                         18.6
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+========================================================================================================================
+💪 Model 2 – Stress × Physical Activity Interaction
+========================================================================================================================
+
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:       quality_of_sleep   R-squared:                       0.834
+Model:                            OLS   Adj. R-squared:                  0.833
+Method:                 Least Squares   F-statistic:                     620.1
+Date:                Mon, 06 Oct 2025   Prob (F-statistic):          6.54e-144
+Time:                        13:41:29   Log-Likelihood:                -261.49
+No. Observations:                 374   AIC:                             531.0
+Df Residuals:                     370   BIC:                             546.7
+Df Model:                           3                                         
+Covariance Type:            nonrobust                                         
+========================================================================================================
+                                           coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------------------------------
+Intercept                                9.9792      0.227     44.014      0.000       9.533      10.425
+stress_level                            -0.5981      0.037    -16.283      0.000      -0.670      -0.526
+Physical_Activity_level                  0.0098      0.004      2.621      0.009       0.002       0.017
+stress_level:Physical_Activity_level -7.929e-05      0.001     -0.130      0.896      -0.001       0.001
+==============================================================================
+Omnibus:                       40.482   Durbin-Watson:                   0.944
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               51.320
+Skew:                          -0.820   Prob(JB):                     7.18e-12
+Kurtosis:                       3.777   Cond. No.                     3.26e+03
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 3.26e+03. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
+========================================================================================================================
+📈 Model 3 – Full Regression with Covariates
+========================================================================================================================
+
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:       quality_of_sleep   R-squared:                       0.873
+Model:                            OLS   Adj. R-squared:                  0.871
+Method:                 Least Squares   F-statistic:                     419.3
+Date:                Mon, 06 Oct 2025   Prob (F-statistic):          7.06e-161
+Time:                        13:41:29   Log-Likelihood:                -211.97
+No. Observations:                 374   AIC:                             437.9
+Df Residuals:                     367   BIC:                             465.4
+Df Model:                           6                                         
+Covariance Type:            nonrobust                                         
+========================================================================================================
+                                           coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------------------------------
+Intercept                                9.0351      0.642     14.079      0.000       7.773      10.297
+stress_level                            -0.2959      0.043     -6.821      0.000      -0.381      -0.211
+Physical_Activity_level                  0.0172      0.003      4.954      0.000       0.010       0.024
+stress_level:Physical_Activity_level    -0.0017      0.001     -2.917      0.004      -0.003      -0.001
+sleep_duration                           0.2870      0.042      6.850      0.000       0.205       0.369
+age                                      0.0171      0.003      5.634      0.000       0.011       0.023
+heart_rate                              -0.0485      0.008     -6.384      0.000      -0.063      -0.034
+==============================================================================
+Omnibus:                       26.074   Durbin-Watson:                   0.946
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               30.360
+Skew:                          -0.615   Prob(JB):                     2.56e-07
+Kurtosis:                       3.660   Cond. No.                     1.06e+04
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 1.06e+04. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
+========================================================================================================================
+🔮 Multinomial Model – Predict Sleep Disorder
+========================================================================================================================
+
+                          MNLogit Regression Results                          
+==============================================================================
+Dep. Variable:         sleep_disorder   No. Observations:                  374
+Model:                        MNLogit   Df Residuals:                      368
+Method:                           MLE   Df Model:                            4
+Date:                Mon, 06 Oct 2025   Pseudo R-squ.:                  0.1306
+Time:                        13:41:29   Log-Likelihood:                -313.98
+converged:                       True   LL-Null:                       -361.17
+Covariance Type:            nonrobust   LLR p-value:                 1.551e-19
+==============================================================================================
+       sleep_disorder=None       coef    std err          z      P>|z|      [0.025      0.975]
+----------------------------------------------------------------------------------------------
+const                        -22.3392      3.189     -7.006      0.000     -28.589     -16.089
+stress_level                   1.1222      0.189      5.948      0.000       0.752       1.492
+quality_of_sleep               2.4140      0.315      7.661      0.000       1.796       3.032
+----------------------------------------------------------------------------------------------
+sleep_disorder=Sleep Apnea       coef    std err          z      P>|z|      [0.025      0.975]
+----------------------------------------------------------------------------------------------
+const                        -18.0362      3.564     -5.060      0.000     -25.022     -11.050
+stress_level                   0.9488      0.214      4.433      0.000       0.529       1.368
+quality_of_sleep               1.8206      0.348      5.226      0.000       1.138       2.503
+==============================================================================================
+
+========================================================================================================================
+🧠 Extended Multinomial Model – With Sleep Duration, HR, Age
+========================================================================================================================
+
+                          MNLogit Regression Results                          
+==============================================================================
+Dep. Variable:         sleep_disorder   No. Observations:                  374
+Model:                        MNLogit   Df Residuals:                      362
+Method:                           MLE   Df Model:                           10
+Date:                Mon, 06 Oct 2025   Pseudo R-squ.:                  0.5070
+Time:                        13:41:29   Log-Likelihood:                -178.07
+converged:                       True   LL-Null:                       -361.17
+Covariance Type:            nonrobust   LLR p-value:                 1.446e-72
+==============================================================================================
+       sleep_disorder=None       coef    std err          z      P>|z|      [0.025      0.975]
+----------------------------------------------------------------------------------------------
+const                        -21.1692      6.553     -3.231      0.001     -34.012      -8.327
+stress_level                   0.9923      0.267      3.716      0.000       0.469       1.516
+quality_of_sleep               3.3211      0.449      7.401      0.000       2.442       4.201
+sleep_duration                 0.0639      0.455      0.140      0.888      -0.828       0.956
+heart_rate                     0.0371      0.079      0.468      0.640      -0.118       0.192
+age                           -0.2395      0.033     -7.185      0.000      -0.305      -0.174
+----------------------------------------------------------------------------------------------
+sleep_disorder=Sleep Apnea       coef    std err          z      P>|z|      [0.025      0.975]
+----------------------------------------------------------------------------------------------
+const                        -48.6304      8.829     -5.508      0.000     -65.935     -31.326
+stress_level                   0.1938      0.321      0.603      0.547      -0.436       0.824
+quality_of_sleep               1.5773      0.594      2.654      0.008       0.412       2.742
+sleep_duration                -0.2417      0.546     -0.443      0.658      -1.311       0.828
+heart_rate                     0.4671      0.085      5.515      0.000       0.301       0.633
+age                            0.1030      0.045      2.305      0.021       0.015       0.191
+==============================================================================================
+
+
+📊 Multinomial Odds Ratios:
+                       0      1
+const             0.0000 0.0000
+stress_level      3.0717 2.5826
+quality_of_sleep 11.1781 6.1758
+
+📊 Extended Model Odds Ratios:
+                       0      1
+const             0.0000 0.0000
+stress_level      2.6973 1.2138
+quality_of_sleep 27.6903 4.8419
+sleep_duration    1.0660 0.7853
+heart_rate        1.0378 1.5954
+age               0.7870 1.1085
