@@ -3,7 +3,7 @@
 import pandas as pd
 import numpy as np
 import matplotlib
-matplotlib.use("Agg")  # ✅ Non-interactive backend (prevents blocking)
+matplotlib.use("Agg")  
 import matplotlib.pyplot as plt
 import seaborn as sns
 import statsmodels.formula.api as smf
@@ -105,7 +105,7 @@ stress_vals = np.linspace(df["stress_level"].min(), df["stress_level"].max(), 10
 avg_quality = df["quality_of_sleep"].mean()
 pred_df = pd.DataFrame({"const": 1, "stress_level": stress_vals, "quality_of_sleep": avg_quality})
 pred_probs = mnlogit_model.predict(pred_df)
-pred_probs.columns = mnlogit_model.params.index  # ✅ Fixed label assignment
+pred_probs.columns = mnlogit_model.params.index 
 
 plt.figure(figsize=(8,6))
 for disorder in pred_probs.columns:
